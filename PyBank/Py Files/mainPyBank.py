@@ -19,7 +19,7 @@ csvpath = os.path.join("PyBank/Resources", "budget_data.csv")
 
 # set the lists
 monthcount = []
-netchange = []
+netprofit = []
 
 # open the cvs file to read the data
 with open(csvpath, newline='') as csvfile:
@@ -28,11 +28,16 @@ with open(csvpath, newline='') as csvfile:
     # don't need the print(csv_header), but loop through reading each row
     for row in csvreader:
         monthcount.append(row[0])
-        netchange.append(int(row[1]))
+        netprofit.append(int(row[1]))
 
 #calculation for total months
 total_months = (len(monthcount))
 
-# check where I'm at
+#calculation for net total amount of "profit/losses" over entire period
+net_total = sum(netprofit)
+
+# check where I'm at, I have no idea what I was trying earlier
+#I made it way too hard, success for total amount!
 print(f'Total Months: {total_months}')
+print(f'Total: ${net_total}')
 
