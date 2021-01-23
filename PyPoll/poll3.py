@@ -5,7 +5,7 @@ import csv
 from collections import Counter
 
 # honestly this was my part that I got stuck on for 3 HOURS
-csvpath = os.path.join('election_data.csv')
+csvpath = os.path.join('Resources' , 'election_data.csv')
 
 #appling my counter to get my total vote
 vote_tally = Counter()
@@ -45,10 +45,10 @@ for candidate in vote_tally:
 print(f'Winner: {winner}')
 
 
-pypoll_output = os.path.join("pypoll_output.txt")
+pypoll_output = os.path.join("Analysis", "pypoll_output.txt")
 with open(pypoll_output, "w") as new:
     new.write(f'Election Results\n')
     new.write(f'---------------------------------\n')
     new.write(f'Total Votes: {total_votes}\n')
     new.write(f'---------------------------------\n')
-    new.write(f'{candidate}: {(total_cand_votes/total_votes):.3%} ({total_cand_votes})\n')
+    new.write(f'Winner: {winner}\n')
